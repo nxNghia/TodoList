@@ -1,0 +1,15 @@
+<div id="<%= dom_id todo_item %>">
+  <div class="container" style="border: 1px solid #000;border-radius: 10px;margin-bottom: 5px;padding: 0">
+    <div style="text-align: right; background: #333; border-radius: 7px 7px 0px 0px;padding: 5px;color: #fff">
+      <p style="margin-bottom: 0px;margin-right: 10px"><%= todo_item.created_at.strftime("%Y %m %d") %></p>
+    </div>
+    <div style="display: flex; justify-content: space-between; padding: 20px;">
+      <p class="h3"><%= todo_item.title %></p>
+      <div style="display: flex">
+        <%= link_to "View" , todo_item, class:"btn btn-danger" %>
+        <%= button_to "Delete" , todo_item, class:"btn btn-danger", method: :delete %>
+      </div>
+    </div>
+  </div>
+
+</div>
