@@ -1,0 +1,29 @@
+.upper-container {
+    text-align: right;
+    background: #333;
+    border-radius: 7px 7px 0px 0px;
+    padding: 5px;
+    color: #fff
+}
+
+.upper-container > p {
+    margin-bottom: 0px;
+    margin-right: 10px;
+}
+
+.lower-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.lower-container > div {
+    display: flex;
+}
+
+.todo-item {
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 0;
+}
