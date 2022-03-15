@@ -19,8 +19,20 @@
   <body>
     <%= render 'home/navbar' %>
     
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="container">
+      <% if notice %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <p class="notice"><%= notice %></p>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <p class="alert"><%= alert %></p>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+    </div>
 
     <div class="container">
       <%= yield %>

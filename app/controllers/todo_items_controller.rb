@@ -1,5 +1,6 @@
 class TodoItemsController < ApplicationController
   before_action :set_todo_item, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: []
 
   # GET /todo_items or /todo_items.json
   def index
@@ -25,7 +26,7 @@ class TodoItemsController < ApplicationController
 
     respond_to do |format|
       if @todo_item.save
-        format.html { redirect_to todo_items_path, notice: "Todo item was successfully created." }
+        format.html { redirect_to root_path, notice: "Todo item was successfully created." }
         format.json { render :show, status: :created, location: @todo_item }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -52,9 +53,14 @@ class TodoItemsController < ApplicationController
     @todo_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to todo_items_url, notice: "Todo item was successfully destroyed." }
+      format.html { redirect_to root_url, notice: "Todo item was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user
+    @todo_item = current_user.friends.find_by(id: params[:id])
+    redirect_to root_path, notice: "Not authorized user" if @todo_item.nil?
   end
 
   private
@@ -65,6 +71,6 @@ class TodoItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def todo_item_params
-      params.require(:todo_item).permit(:title)
+      params.require(:todo_item).permit(:title, :user_id)
     end
 end
