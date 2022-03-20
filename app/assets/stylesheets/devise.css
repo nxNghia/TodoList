@@ -1,0 +1,47 @@
+.login-form {
+    background-color: aliceblue;
+    width: 400px;
+    border-radius: 10px;
+    height: 500px;
+    box-sizing: border-box;
+    padding-top: 90px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+    margin-top: 100px;
+}
+
+.login-form a {
+    text-decoration: none;
+}
+
+.login-form > h2 {
+    font-size: 60px;
+    margin-bottom: 60px;
+}
+
+.field {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
+
+.actions {
+    text-align: center;
+}
+
+.actions > input {
+    width: 50%;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sign-up-link {
+    position: absolute;
+    bottom: 0px;
+    left: auto;
+    right: auto;
+}

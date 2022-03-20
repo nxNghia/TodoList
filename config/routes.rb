@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :subitems
   devise_for :users
   resources :todo_items
   # get 'home/index'

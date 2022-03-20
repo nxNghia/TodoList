@@ -12,16 +12,15 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class:"form-control" %>
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block"  %>
     <%= form.number_field :user_id, value: current_user.id, type: :hidden %>
   </div>
 
   <div>
     <%= form.submit %>
   </div>
+
 <% end %>
